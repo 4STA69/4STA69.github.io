@@ -1,1 +1,649 @@
-Still Under Constructure
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulhalim Hussein Aka ASTA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 1s ease-in-out;
+        }
+        
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .glow {
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #3b82f6, 0 0 20px #3b82f6;
+            }
+            to {
+                box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #8b5cf6, 0 0 40px #8b5cf6;
+            }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Animated Background -->
+    <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full z-0"></div>
+    
+    <!-- Main Content -->
+    <div class="relative z-10">
+        <!-- Navigation -->
+        <nav class="fixed w-full bg-gray-900 bg-opacity-80 backdrop-blur-md z-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0">
+                            <span class="text-2xl font-bold gradient-text">ASTA :D</span>
+                        </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Home</a>
+                            <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">About</a>
+                            <a href="#projects" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Projects</a>
+                            <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium hover:text-blue-400 transition">Contact</a>
+                        </div>
+                    </div>
+                    <div class="md:hidden">
+                        <button class="mobile-menu-button p-2 rounded-md hover:text-blue-400 focus:outline-none">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="mobile-menu hidden md:hidden bg-gray-800">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Home</a>
+                    <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">About</a>
+                    <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Projects</a>
+                    <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:text-blue-400 transition">Contact</a>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="gradient-text">Abdulhalim</span></h1>
+                        <div class="typewriter text-xl md:text-2xl mb-6">
+                            Network Engineer
+                        </div>
+                        <p class="text-lg mb-8 text-gray-300">
+                            Final-year Network Engineering student with a passion for programming, cybersecurity, and creating impactful projects.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">View Projects</a>
+                            <a href="#contact" class="px-6 py-3 border border-blue-400 rounded-lg font-medium hover:bg-blue-400 hover:bg-opacity-10 transition">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 flex justify-center fade-in">
+                        <div class="relative floating">
+                            <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                <img src="https://avatars.githubusercontent.com/u/12345678?v=4" alt="Profile" class="w-60 h-60 md:w-72 md:h-72 rounded-full object-cover border-4 border-white">
+                            </div>
+                            <div class="absolute -bottom-5 -right-5 bg-gray-800 p-4 rounded-lg shadow-lg">
+                                <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_gn0tojcq.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></lottie-player>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800 bg-opacity-50 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-800 bg-opacity-70 rounded-xl p-8 card-hover">
+                            <h3 class="text-2xl font-bold mb-6">My Journey</h3>
+                            <p class="mb-6 text-gray-300">
+                                I'm Abdulhalim Hussein Salem Saleh, a motivated and creative final-year Network Engineering student based in Aden, Yemen. 
+                                I have hands-on experience in networking concepts, simulation using Cisco Packet Tracer, and a strong passion for programming, 
+                                especially in JavaScript and Node.js.
+                            </p>
+                            <p class="mb-6 text-gray-300">
+                                I currently work at a typing and printing store, which has sharpened my attention to detail, multitasking, and client service skills. 
+                                I'm also interested in cybersecurity and have been actively learning and practicing in that area.
+                            </p>
+                            <p class="text-gray-300">
+                                Besides tech, I create and edit video content, including montages and educational material, with a growing YouTube presence. 
+                                I speak Arabic natively, am fluent in English, and have a basic understanding of German.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-8 bg-gray-800 bg-opacity-70 rounded-xl p-8 card-hover">
+                            <h3 class="text-2xl font-bold mb-6">My Goals</h3>
+                            <p class="text-gray-300">
+                                I'm always eager to learn new technologies, connect with professionals, and work on impactful projects. 
+                                My long-term goal is to move to a country where I can grow personally and professionally, contribute meaningfully, 
+                                and live a life that reflects my ambitions.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-800 bg-opacity-70 rounded-xl p-8 card-hover">
+                            <h3 class="text-2xl font-bold mb-6">Skills & Expertise</h3>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-lg font-medium mb-3">Networking</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Cisco Packet Tracer</span>
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Network Configuration</span>
+                                            <span>85%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Cybersecurity</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-6">
+                                <h4 class="text-lg font-medium mb-3">Programming</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>JavaScript</span>
+                                            <span>95%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Node.js</span>
+                                            <span>95%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>HTML/CSS</span>
+                                            <span>75%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-lg font-medium mb-3">Languages</h4>
+                                <div class="space-y-4">
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>Arabic (Native)</span>
+                                            <span>100%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>English (Fluent)</span>
+                                            <span>90%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex justify-between mb-1">
+                                            <span>German (Basic)</span>
+                                            <span>40%</span>
+                                        </div>
+                                        <div class="skill-bar">
+                                            <div class="skill-progress" style="width: 40%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Gartic.io Clone -->
+                    <div class="bg-gray-800 bg-opacity-70 rounded-xl overflow-hidden card-hover glow">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Gartic.io Clone" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-xl font-bold">Gartic.io Clone</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">
+                                A real-time multiplayer drawing and guessing game inspired by Gartic.io, built with JavaScript, Node.js, and WebSocket.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">JavaScript</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">WebSocket</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">HTML5 Canvas</span>
+                            </div>
+                            <a href="http://rayan.sytes.net:6033/gartic.html" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                                <span>Live Demo</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Network Simulation -->
+                    <div class="bg-gray-800 bg-opacity-70 rounded-xl overflow-hidden card-hover">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Network Simulation" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-xl font-bold">Network Simulations</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">
+                                Various network configurations and simulations created using Cisco Packet Tracer for educational purposes.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Cisco Packet Tracer</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Network Design</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Routing</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Switching</span>
+                            </div>
+                            <button class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition opacity-50 cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Editing Portfolio -->
+                    <div class="bg-gray-800 bg-opacity-70 rounded-xl overflow-hidden card-hover">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Video Editing" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-xl font-bold">Video Editing Portfolio</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">
+                                A collection of video montages and educational content I've created, showcasing my video editing skills.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Adobe Premiere</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">After Effects</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Motion Graphics</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Color Grading</span>
+                            </div>
+                            <a href="https://www.youtube.com/@4574m/videos" target="_blank" class="inline-flex items-center px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-700 transition">
+                                <span>Youtube Channel</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Cybersecurity Projects -->
+                    <div class="bg-gray-800 bg-opacity-70 rounded-xl overflow-hidden card-hover">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cybersecurity" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4">
+                                <h3 class="text-xl font-bold">Cybersecurity Projects</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-300 mb-4">
+                                Various cybersecurity projects and experiments I've worked on while learning about network security.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Network Security</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Penetration Testing</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Ethical Hacking</span>
+                                <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-sm">Kali Linux</span>
+                            </div>
+                            <button class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition opacity-50 cursor-not-allowed">
+                                Coming Soon
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800 bg-opacity-50 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Get In Touch</h2>
+                
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-800 bg-opacity-70 rounded-xl p-8 card-hover">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                            <p class="text-gray-300 mb-8">
+                                Feel free to reach out to me for collaborations, job opportunities, or just to say hello!
+                            </p>
+                            
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                                        <i class="fas fa-envelope text-blue-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium">Email</h4>
+                                        <p class="text-gray-400"><a href="mailto:AST469@proton.me">AST469@proton.me</a></p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                                        <i class="fas fa-map-marker-alt text-blue-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium">Location</h4>
+                                        <p class="text-gray-400">Aden, Yemen</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center">
+                                        <i class="fas fa-globe text-blue-400"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h4 class="text-lg font-medium">Social Media</h4>
+                                        <div class="flex space-x-4 mt-2">
+                                            <a href="https://github.com/4STA69" class="h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center hover:bg-blue-800 transition">
+                                                <i class="fab fa-github text-blue-400"></i>
+                                            </a>
+                                            <a href="https://www.youtube.com/@4574m/videos" class="h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center hover:bg-blue-800 transition">
+                                                <i class="fab fa-youtube text-blue-400"></i>
+                                            </a>
+                                            <!--<a href="#" class="h-10 w-10 rounded-full bg-blue-900 bg-opacity-50 flex items-center justify-center hover:bg-blue-800 transition">
+                                                <i class="fab fa-twitter text-blue-400"></i>
+                                            </a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="lg:w-1/2">
+                        <div class="bg-gray-800 bg-opacity-70 rounded-xl p-8 card-hover">
+                            <h3 class="text-2xl font-bold mb-6">Send Me a Message</h3>
+                            <form class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your name">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your email">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Subject">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your message"></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-medium hover:opacity-90 transition">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="py-8 px-4 sm:px-6 lg:px-8 bg-gray-900 bg-opacity-80">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="mb-4 md:mb-0">
+                        <span class="text-xl font-bold gradient-text">Abdulhalim Hussein</span>
+                        <p class="text-gray-400 mt-1">Network Engineer</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        
+                        <a href="https://github.com/4STA69" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@4574m" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                        <!--<a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>-->
+                    </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                    <p>© 2025 Abdulhalim Hussein. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        // Initialize Vanta.js animated background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x111827,
+            points: 12.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        const animateSkillBars = () => {
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkillBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('#about').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add animation to project cards on scroll
+        const projectCards = document.querySelectorAll('.card-hover');
+        
+        const animateCards = () => {
+            projectCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in');
+                }, index * 200);
+            });
+        };
+        
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCards();
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('#projects').forEach(section => {
+            cardObserver.observe(section);
+        });
+    </script>
+</body>
+</html>
